@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { CircularProgress } from "@mui/material";
-import { ErrorInfo } from "../errorInfo/errorInfo";
+import { ErrorInfo } from "../ErrorInfo/ErrorInfo";
 import styles from "./ProductList.module.css";
-import { EmptyList } from "../emptyList/emptyList";
+import { EmptyList } from "../EmptyList/EmptyList";
 
 export const ProductList = ({ category }) => {
   const [products, setProducts] = useState([]);
@@ -11,6 +11,8 @@ export const ProductList = ({ category }) => {
   const [showError, setShowError] = useState(false);
 
   useEffect(() => {
+    setShowError(false);
+    setIsFetching(true);
     axios
       .get(`https://dummyjson.com/products/category/${category}`)
       .then((response) => {
@@ -33,7 +35,7 @@ export const ProductList = ({ category }) => {
   }
 
   return (
-    <div className={styles.productGrid}>
+    <div className={styles.productContainer}>
       {products.map((product) => (
         <div key={product.id} className={styles.productItem}>
           <div>

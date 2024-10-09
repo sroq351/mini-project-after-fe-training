@@ -1,7 +1,7 @@
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
-import styles from "./categories.module.css";
+import styles from "./Categories.module.css";
 
 export const Categories = ({ category, onCategoryChange }) => {
   return (

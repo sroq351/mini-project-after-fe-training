@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { ProductList } from "./components/Products/ProductList";
-import { Categories } from "./components/categories/categories";
+import { ProductList } from "./components/Products/ProductList.jsx";
+import { Categories } from "./components/Categories/Categories.jsx";
 
 function App() {
   const [category, setCategory] = useState("furniture");
